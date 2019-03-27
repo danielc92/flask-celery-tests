@@ -1,36 +1,51 @@
 # Project Title
-A few sentences about the project.
-What are you building?
-What problem are you trying to solve?
-Who is the project for? Timeframe?
+Implementing celery in a flask application, so that users do not have to wait extended periods of time for transactions to complete. RabbitMQ will be used as a backend broker, postgres and flask-sqlalchemy (sqlalchemy) will be used as a database for this example.
 
 # Before you get started
-Concepts/Software/Programming modules a user may have to read up on before getting started with this project. eg. 'Read about [neural networks](https://towardsdatascience.com/how-to-build-your-own-neural-network-from-scratch-in-python-68998a08e4f6?gi=44b811975215) before getting started.'
+
 
 # Setup
 **How to obtain this repository:**
 ```sh
 git clone https//link.to.this.projects.git-repo
 ```
-**Modules/dependencies:**
-- `pandas`
-- `requests`
-- `jupyter`
-- `sklearn`
+
+** Installation of RabbitMQ **
+```sh
+brew update
+brew install rabbitmq
+nano ~/.bash_profile
+# Add /usr/local/sbin/ and /usr/local/Cellar/rabbitmq/{VERSION}/sbin/ to PATH and export PATH. Save bash profile and reload terminal.
+# Note: cd into /usr/local/Cellar/rabbitmq to check for the correct version.
+```
+
+** Starting and stopping Rabbitmq server
+```sh
+# Start server
+rabbitmq-server
+
+# Stop server
+# Control + C in terminal
+
+# Visit dashboard in browser
+http://localhost:15672
+```
+
+
+**Modules/dependencies Python3:**
+- `celery`
+- `flask`
 
 Install the following dependences:
 ```sh
-cd /local/location/of/this/repo
-pip install requirements.txt
+pip install flask celery
 ```
 
 # Tests
 - Tests performed on this project. What did you do? Which files were used? Was it successful?
 
 # Contributors
-- Name of Contributor 1
-- Name of Contributor 2
+- Daniel Corcoran
 
 # Sources
-- Sources for techniques/tutorials used in this project to help newcomers
-- Sources for data used in this project
+- [Installing RabbitMQ on Mac](https://www.dyclassroom.com/howto-mac/how-to-install-rabbitmq-on-mac-using-homebrew)
