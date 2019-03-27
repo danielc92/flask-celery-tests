@@ -29,23 +29,28 @@ rabbitmq-server
 
 # Visit dashboard in browser
 http://localhost:15672
+# The default user **and** password is 'guest'
 ```
 
 
 **Modules/dependencies Python3:**
 - `celery`
+- `flask-celery`
 - `flask`
 
 Install the following dependences:
 ```sh
-pip install flask celery
+pip install flask celery flask-celery
 ```
 
 # Tests
-- Tests performed on this project. What did you do? Which files were used? Was it successful?
+- Installation of RabbitMQ. Tested login successfully into dashboard.
+
 
 # Contributors
 - Daniel Corcoran
 
 # Sources
 - [Installing RabbitMQ on Mac](https://www.dyclassroom.com/howto-mac/how-to-install-rabbitmq-on-mac-using-homebrew)
+
+# Screenshots
