@@ -35,7 +35,7 @@ db.create_all()
 def insert():
     try:
         """Insert large amount of records to cause a delay."""
-        for num in range(30000):
+        for num in range(200):
             data = ''.join([choice(ascii_lowercase) for i in range(20)])
             result = Results(data=data)
             db.session.add(result)
