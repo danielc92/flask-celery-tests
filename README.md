@@ -5,10 +5,11 @@ Postgres being used as database, however can be subbed out for mysql, sqlserver,
 This repo is based on a `Mac OS` and `Python 3.6.5`.
 
 # Before you get started
-- Basic unstanding python 3
-- Knowledge of Redis
+- Basic understanding of python and web servers
+- Knowledge of Redis/Message brokers
 - Knowledge of ORM and relational databases
 - Knowledge of Flask
+- Knowledge of Celery
 
 # Setup
 **How to obtain this repository:**
@@ -35,25 +36,27 @@ pip install flask celery
 
 # Getting up and running
 
+### Starting the web application
+The application has two routes only which insert several thousand records to a database
+1. localhost:5000/process (no celery)
+2. localhost:5000/async (implements celery worker)
 ```sh
-# Starting the web application
-# The application has two routes only which insert several thousand records to a database
-# 1. localhost:5000/process (no celery)
-# 2. localhost:5000/async (implements celery worker)
 cd /location/of/cloned/repo
 python3 application.py
 ```
 
+### Starting the celery worker
 ```sh
-# Starting the celery worker
 celery -A application.celery worker --concurrency 2 --loglevel=info
 ```
 
+### Starting the redis brew service
 ```sh
-# Starting the redis brew service
 brew services restart redis
+```
 
-# Checking services in brew
+### Checking services in brew
+```sh
 brew services list
 ```
 
