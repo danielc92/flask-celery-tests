@@ -1,17 +1,20 @@
 # Project Title
-Implementing celery in a flask application, so that users do not have to wait extended periods of time for transactions to complete. Redis will be used as a backend broker, postgres and flask-sqlalchemy (sqlalchemy) will be used as a database for this example.
+Implementing celery in a flask application, so that users do not have to wait extended periods of time for transactions to complete.
+Redis being used as backend broker, however can be subbed out for memcached, RabbitMQ.
+Postgres being used as database, however can be subbed out for mysql, sqlserver, sqlite3 etc.
+This repo is based on a `Mac OS` and `Python 3.6.5`.
 
 # Before you get started
-
+- Basic unstanding python 3
+- Knowledge of Redis
+- Knowledge of ORM and relational databases
 
 # Setup
 **How to obtain this repository:**
 ```sh
 git clone https//link.to.this.projects.git-repo
 ```
-
-
-**Redis on Mac**
+**Installation of Redis on Mac**
 ```sh
 # Installation
 brew install redis
@@ -20,47 +23,47 @@ brew install redis
 brew service restart redis
 ```
 
-**Installation of RabbitMQ**
-```sh
-brew update
-brew install rabbitmq
-nano ~/.bash_profile
-# Add /usr/local/sbin/ and /usr/local/Cellar/rabbitmq/{VERSION}/sbin/ to PATH and export PATH. Save bash profile and reload terminal.
-# Note: cd into /usr/local/Cellar/rabbitmq to check for the correct version.
-```
-
-** Starting and stopping Rabbitmq server
-```sh
-# Start server
-rabbitmq-server
-
-# Stop server
-# Control + C in terminal
-
-# Visit dashboard in browser
-http://localhost:15672
-# The default user **and** password is 'guest'
-```
-
-
 **Modules/dependencies Python3:**
 - `celery`
-- `flask-celery`
 - `flask`
 
 Install the following dependences:
 ```sh
-pip install flask celery flask-celery
+pip install flask celery
+```
+
+# Getting up and running
+
+```sh
+# Starting the web application
+cd /location/of/cloned/repo
+python3 application.py
+```
+
+```sh
+# Starting the celery worker
+```
+
+```sh
+# Starting the redis brew service
+brew services restart redis
+
+# Checking services in brew
+brew services list
 ```
 
 # Tests
-- Installation of RabbitMQ. Tested login successfully into dashboard.
+- Installation of Redis.
+- Installation of Celery.
+- Tested non async route to push n records to database.
+- Tested async route to push n records to database.
 
+**Note:** commits were failing when the /async route was being requested rapidly. Fixed by changing `--concurrency` flag to `2` when starting a celery worker.
 
 # Contributors
 - Daniel Corcoran
 
 # Sources
-- [Installing RabbitMQ on Mac](https://www.dyclassroom.com/howto-mac/how-to-install-rabbitmq-on-mac-using-homebrew)
+- [Installing Redis on Mac](https://medium.com/@petehouston/install-and-config-redis-on-mac-os-x-via-homebrew-eb8df9a4f298)
 - [Flask, Celery & SQLAlchemy Example by PrettyPrinted](https://www.youtube.com/watch?v=lOirTBrOek0)
 # Screenshots
