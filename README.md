@@ -1,4 +1,4 @@
-# Project Title
+# Flask / Celery / Redis Tests
 Implementing celery in a flask application, so that users do not have to wait extended periods of time for transactions to complete.
 Redis being used as backend broker, however can be subbed out for memcached, RabbitMQ.
 Postgres being used as database, however can be subbed out for mysql, sqlserver, sqlite3 etc.
@@ -8,6 +8,7 @@ This repo is based on a `Mac OS` and `Python 3.6.5`.
 - Basic unstanding python 3
 - Knowledge of Redis
 - Knowledge of ORM and relational databases
+- Knowledge of Flask
 
 # Setup
 **How to obtain this repository:**
@@ -69,7 +70,7 @@ brew services list
 
 # Screenshots
 ### Starting the celery service
-![]()
+![](https://github.com/danielc92/flask-celery-tests/blob/master/screenshots/Screen%20Shot%202019-03-28%20at%201.59.47%20pm.png)
 ### The timing of `/process` route (non-async)
 ![]()
 ### The timing of `/async` route (async)
