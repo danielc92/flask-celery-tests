@@ -37,12 +37,16 @@ pip install flask celery
 
 ```sh
 # Starting the web application
+# The application has two routes only which insert several thousand records to a database
+# 1. localhost:5000/process (no celery)
+# 2. localhost:5000/async (implements celery worker)
 cd /location/of/cloned/repo
 python3 application.py
 ```
 
 ```sh
 # Starting the celery worker
+celery -A application.celery worker --concurrency 2 --loglevel=info
 ```
 
 ```sh
