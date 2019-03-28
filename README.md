@@ -1,5 +1,5 @@
 # Project Title
-Implementing celery in a flask application, so that users do not have to wait extended periods of time for transactions to complete. RabbitMQ will be used as a backend broker, postgres and flask-sqlalchemy (sqlalchemy) will be used as a database for this example.
+Implementing celery in a flask application, so that users do not have to wait extended periods of time for transactions to complete. Redis will be used as a backend broker, postgres and flask-sqlalchemy (sqlalchemy) will be used as a database for this example.
 
 # Before you get started
 
@@ -10,7 +10,17 @@ Implementing celery in a flask application, so that users do not have to wait ex
 git clone https//link.to.this.projects.git-repo
 ```
 
-** Installation of RabbitMQ **
+
+**Redis on Mac**
+```sh
+# Installation
+brew install redis
+
+# Restarting service
+brew service restart redis
+```
+
+**Installation of RabbitMQ**
 ```sh
 brew update
 brew install rabbitmq
@@ -52,5 +62,5 @@ pip install flask celery flask-celery
 
 # Sources
 - [Installing RabbitMQ on Mac](https://www.dyclassroom.com/howto-mac/how-to-install-rabbitmq-on-mac-using-homebrew)
-
+- [Flask, Celery & SQLAlchemy Example by PrettyPrinted](https://www.youtube.com/watch?v=lOirTBrOek0)
 # Screenshots
