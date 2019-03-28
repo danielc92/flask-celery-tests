@@ -72,8 +72,8 @@ brew services list
 ### Starting the celery service
 ![](https://github.com/danielc92/flask-celery-tests/blob/master/screenshots/Screen%20Shot%202019-03-28%20at%201.59.47%20pm.png)
 ### The timing of `/process` route (non-async)
-![]()
+![](https://github.com/danielc92/flask-celery-tests/blob/master/screenshots/Screen%20Shot%202019-03-28%20at%202.02.55%20pm.png)
 ### The timing of `/async` route (async)
-![]()
+![](https://github.com/danielc92/flask-celery-tests/blob/master/screenshots/Screen%20Shot%202019-03-28%20at%202.02.33%20pm.png)
 ### The timing of background tasks, celery is processing
-![]()
+![](https://github.com/danielc92/flask-celery-tests/blob/master/screenshots/Screen%20Shot%202019-03-28%20at%202.01.50%20pm.png)
