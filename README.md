@@ -79,8 +79,11 @@ brew services list
 ### Starting the celery service
 ![](https://github.com/danielc92/flask-celery-tests/blob/master/screenshots/Screen%20Shot%202019-03-28%20at%201.59.47%20pm.png)
 ### The timing of `/process` route (non-async)
+This route is not using celery, therefore waits until the entire insert() function is complete until the user receives the return code. It takes about 8 seconds to insert 30,000 records to postgres.
 ![](https://github.com/danielc92/flask-celery-tests/blob/master/screenshots/Screen%20Shot%202019-03-28%20at%202.02.55%20pm.png)
 ### The timing of `/async` route (async)
+In this route the user receives feedback almost instantenously in a fraction of a second. The tasks are sent to the celery worker queue and await processing.
 ![](https://github.com/danielc92/flask-celery-tests/blob/master/screenshots/Screen%20Shot%202019-03-28%20at%202.02.33%20pm.png)
 ### The timing of background tasks, celery is processing
+Shows in a burst of ~2 seconds, 5 requests to the `/async` route being made. 30,000 * 5 records join the queue. After ~ 40 seconds 4 requests complete in the background.
 ![](https://github.com/danielc92/flask-celery-tests/blob/master/screenshots/Screen%20Shot%202019-03-28%20at%202.01.50%20pm.png)
