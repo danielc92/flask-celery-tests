@@ -66,4 +66,13 @@ brew services list
 # Sources
 - [Installing Redis on Mac](https://medium.com/@petehouston/install-and-config-redis-on-mac-os-x-via-homebrew-eb8df9a4f298)
 - [Flask, Celery & SQLAlchemy Example by PrettyPrinted](https://www.youtube.com/watch?v=lOirTBrOek0)
+
 # Screenshots
+### Starting the celery service
+![]()
+### The timing of `/process` route (non-async)
+![]()
+### The timing of `/async` route (async)
+![]()
+### The timing of background tasks, celery is processing
+![]()
